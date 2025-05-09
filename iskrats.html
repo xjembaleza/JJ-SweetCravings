@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WebsysFinalProj</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Caveat&family=Dancing+Script&family=Great+Vibes&family=Monsieur+La+Doulaise&family=Pacifico&family=Sacramento&family=Satisfy&family=Yellowtail&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400&family=Playfair+Display:wght@400&family=Libre+Baskerville:wght@400&family=Crimson+Text:wght@400&family=Domine:wght@400&family=Lora:wght@400&family=Roboto+Slab:wght@400&family=PT+Serif:wght@400&family=Arvo:wght@400&family=EB+Garamond:wght@400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: rgb(93, 41, 58);
+    }
+
+    .maincontainer {
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(rgba(103, 10, 43, 0.75), rgba(245, 131, 207, 0.75));
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding-top: 120px;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgb(90, 2, 31);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      width: 90px;
+      cursor: pointer;
+      flex-shrink: 0;
+      margin-right: 15px;
+    }
+
+    .navbar ul {
+      display: flex;
+      flex: 1;
+      list-style: none;
+      gap: 0;
+    }
+
+    .navbar ul li {
+      flex: 1;
+      text-align: center;
+    }
+
+    .navbar ul li a {
+      display: block;
+      text-decoration: none;
+      color: rgb(230, 143, 172);
+      text-transform: uppercase;
+      font-size: 12px;
+      padding: 10px 5px;
+      transition: background 0.2s ease;
+    }
+
+    .navbar ul li:hover a {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar ul li::after {
+      content: '';
+      height: 2px;
+      width: 0%;
+      background: #ce4569;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transition: 0.3s ease;
+    }
+
+    .navbar ul li:hover::after {
+      width: 100%;
+    }
+
+    .bannerdiv {
+      display: flex;
+      padding: 8px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo-name {
+      font-family: 'Lobster', cursive;
+      font-size: 70px;
+      color: #f5d5e5;
+      text-align: center;
+      text-shadow: 4px 4px #630b34;
+      margin: 0;
+      padding-top: 8px;
+    }
+
+    .tagline {
+      font-family: 'Pacifico', cursive;
+      font-size: 27px;
+      color: #fed2e8;
+      text-shadow: 2px 2px #630b34;
+      margin: 10px 0 0 0;
+      text-align: center;
+      padding-top: 5px;
+    }
+
+    .date {
+      font-family: 'Times New Roman';
+      font-size: 27px;
+      font-weight: bold;
+      color: #f8e7ef;
+      text-shadow: 2px 2px #630b34;
+      margin: 10px 0 0 0;
+      text-align: center;
+      padding-top: 5px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar ul li a {
+        font-size: 6px;
+        padding: 8px 2px;
+      }
+
+      .logo {
+        width: 40px;
+        margin-right: 10px;
+      }
+
+      .logo-name {
+        font-size: 38px;
+      }
+
+      .tagline {
+        font-size: 14px;
+      }
+      .date {
+        font-size: 14px;
+
+      }
+    }
+
+    .maincontainer2 {
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(rgba(118, 32, 62, 0.75), rgba(245, 131, 207, 0.75));
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        padding-top: 120px;
+      }
+
+      .homepagecontainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        padding: 40px 10%;
+        flex-wrap: wrap;
+        margin: 0;
+      }
+  
+      .homepagetexts {
+        flex: 1;
+        max-width: 500px;
+      }
+  
+      .homepagetitle {
+        font-size: 26px;
+        color: #feb8df;
+        font-weight: bold;
+      }
+  
+      .homepagedescrip {
+        font-family: 'Times New Roman';
+        font-size: 15px;
+        color: #ffffff;
+        margin-top: 15px;
+      }
+  
+      .buynowbtn {
+        display: inline-block;
+        margin-top: 20px;
+        background: #f97cb2;
+        color: rgb(80, 1, 34);
+        letter-spacing: 2.5px; 
+        padding: 20px 35px; 
+        transition: all 0.35 ease 0s;
+        cursor: pointer; 
+        text-decoration: none;
+        border-radius: 45px;
+        font-weight: bolder;
+        transition: background-color 0.3s ease;
+      }
+  
+      .buynowbtn:hover {
+        background-color: #510228; 
+        box-shadow: Opx 15px 20px rgba (46, 229, 157, 0.4); 
+        color: #fff;
+        border-color: #f9e7f3;
+        transform: translateY (-7px);
+      }
+  
+      .buynowbtn:active {
+        transform: translateY (-1px) ;
+      }
+  
+      .carousel-inner1{
+        max-width: 600px;
+        border-radius: 15px;
+      }
+      .carousel-inner1 img {
+        width: 500px;
+        border-radius: 10px;
+      }
+      .carousel-control-next:hover {
+        background-color: #b55b85c4;
+        border-radius: 15px;
+      }
+      .carousel-control-prev:hover {
+        background-color:#b55b85c4;
+        border-radius: 15px;
+      }
+
+    .aboutusmaintitle {
+      text-align: center;
+      font-size: 40px;
+      color: rgb(255, 181, 218);
+      text-shadow: 2px 2px #890040;
+      font-family: 'Pacifico', cursive;
+      font-weight: 90;
+      padding-bottom: 28px;
+    }
+
+      .abtuscont {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding-bottom: 10%;
+        flex-wrap: wrap;
+      }
+  
+      .abt-us-card {
+        background: #ffecf6;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(250, 174, 212, 0.847);
+        width: 350px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+  
+      .abt-us-card:hover {
+        transform: translateY(-10px);
+        cursor: pointer;
+        box-shadow: 0 15px 25px rgba(255, 153,204, 0.45);
+      }
+  
+      .abt-us-title {
+        font-size: 32px;
+        font-weight: bold;
+        color: #d63384;
+        margin-bottom: 8px;
+        font-family: 'Lobster', cursive;
+        font-weight: 90;
+      }
+  
+      .abt-us-quest {
+        color: #c94f93;
+        font-size: 16px;
+        font-style: italic;
+        font-family: 'Times New Roman';
+        margin-bottom: 10px;
+      }
+  
+      .divider {
+        width: 40px;
+        height: 3px;
+        background: #ff69b4;
+        margin: 12px auto;
+        border-radius: 10px;
+      }
+  
+      .abt-us-description {
+        font-size: 15px;
+        font-family: 'Times New Roman';
+        color: #5b192f;
+        margin: 15px 0;
+        line-height: 1.5;
+      }
+
+      .homeimg{
+        max-width: 600px;
+      }
+
+      .gallery-container {
+        max-width: 1100px;
+        margin: auto;
+        background: #ffecf6;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(250, 174, 212, 0.847);
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .textnggallery{
+        width: 1200px;
+        font-size: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 40px;
+        align-items: center;
+        color: #ffeaf5;
+        font-family: 'Satisfy', cursive;;
+        font-weight: 90;
+        text-align: center;
+      }
+      .carousel-wrapper {
+        flex: 1 1 550px;
+        max-width: 550px;
+        position: relative; 
+      }
+  
+      .carousel-inner .carousel-item > div {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+      }
+  
+      .carousel-inner img {
+        width: 100%;
+        max-width: 260px;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+      }
+  
+      .carousel-inner img:hover {
+        transform: scale(1.05);
+      }
+  
+      .carousel-control-prev2,
+      .carousel-control-next2 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        background-color: rgba(254, 146, 206, 0.326);
+        border-radius: 15%;
+        padding: 5px;
+        border: none;
+        color: #d63384;
+      }
+      
+      .carousel-control-prev2 {
+        left: 8px; 
+      }
+      
+      .carousel-control-next2 {
+        right: 8px; 
+      }
+  
+      .gallerytexts {
+        flex: 1 1 400px;
+        max-width: 500px;
+      }
+  
+      .gallerytitle {
+        font-size: 32px;
+        font-weight: bold;
+        color: #d63384;
+        margin-bottom: 8px;
+        font-family: 'Lobster', cursive;
+      }
+  
+      .gallerydescrip {
+        color: #c94f93;
+        font-size: 16px;
+        font-style: italic;
+        font-family: 'Times New Roman';
+        margin-bottom: 10px;
+      }
+  
+      .buynowbtn2 {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 55px;
+        background-color: #d63384;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+  
+      .buynowbtn2:hover {
+        background-color: #a3005a;
+      }
+  
+      .buynowbtn2 {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 55px;
+        background-color: #d63384;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+  
+      .buynowbtn2:hover {
+        background-color: #a3005a;
+      }
+  
+      @media (max-width: 768px) {
+        .gallery-container {
+          flex-direction: column;
+          padding: 20px;
+        }
+  
+        .carousel-inner .carousel-item > div {
+          flex-direction: column;
+           transition: transform 1s ease-in-out;
+        }
+  
+        .carousel-wrapper,
+        .homepagetexts {
+          max-width: 100%;
+        }
+  
+        .carousel-inner img {
+          max-width: 100%;
+          height: 200px;
+        }
+      }
+
+      .loccont, #loc {
+        width: 100%;
+        height: 50vh; 
+        margin: 0;
+        padding: 0;
+      }
+      
+      #loc iframe {
+        width: 100%; 
+        height: 100%;
+        border: none;
+      }
+
+    .reservecont {
+        display: flex;
+        justify-content: center;
+        padding-left: 35%;
+        padding-bottom: 10%;
+      }
+      
+      .reserveformcontainer {
+        width: 100%;
+        max-width: 600px; 
+      }
+      
+      .titles {
+        padding-top: 0px;
+        padding-bottom: 20px;
+        font-size: 40px;
+        color: rgb(255, 181, 218);
+        text-shadow: 2px 2px #890040;
+        font-family: 'Pacifico', cursive;
+        font-weight: 90;
+      }
+
+      .titles2 {
+        padding-left: 22%;
+        font-size: 40px;
+        color: rgb(255, 181, 218);
+        text-shadow: 2px 2px #890040;
+        font-family: 'Pacifico', cursive;
+        font-weight: 90;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      input, select, textarea {
+        margin-bottom: 15px;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 13px;
+        font-family: 'Times New Roman';
+      }
+      
+      textarea {
+        resize: vertical;
+        font-family: 'Times New Roman';
+      }
+      
+      button {
+        background-color: #990045;
+        color: white;
+        border: none;
+        padding: 12px;
+        font-weight: bold;
+        cursor: pointer;
+        text-transform: uppercase;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+      .okaynato{
+        padding-bottom: 60px;
+      }
+      button:hover {
+        background-color: #edb6d3;
+        color: #630b34;
+      }
+      
+      .contactscont {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 50px; 
+        padding: 50px;
+        flex-wrap: wrap;
+      }
+      
+      .contactstext {
+        width: 100%;
+        text-align: center;
+        max-width: 400px;
+        font-size: 20px;
+        align-items: center;
+        padding-top: 30px;
+        color: #ffeaf5;
+        font-family: 'Satisfy', cursive;
+        font-weight: 90;
+      }
+      .smile{
+        padding-left: 20%;
+        z-index: 999;
+        height: 210px;
+        padding-top: 40px;
+      }
+      .reservecont {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 90px; 
+        padding: 50px;
+        flex-wrap: wrap;
+      }
+      
+      .textngreserve {
+        width: 100%;
+        max-width: 300px;
+        font-size: 20px;
+        padding-top: 28px;
+        text-align: center;
+        align-items: center;
+        color: #ffeaf5;
+        font-family: 'Satisfy', cursive;;
+        font-weight: 90;
+      }
+      .product-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+  
+      .productitems {
+        flex: 1 1 200px;
+        max-width: 300px;
+        background-color: #e7dce3;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(104, 12, 64, 0.568);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .productitems img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+  
+      .productitems:hover {
+        transform: translateY(-5px);
+      }
+  
+      .product-info {
+        padding: 15px;
+        text-align: center;
+      }
+  
+      .product-name {
+        margin: 10px 0 5px;
+        color: #333;
+        font-size: 25px;
+        font-weight: bold;
+        color: #d63384;
+        font-weight: 90;
+        margin-bottom: 8px;
+        font-family: 'Lobster', cursive;
+      }
+      .product-price{
+        font-weight: bolder;
+      }
+      .product-descrip {
+        font-size: 14px;
+        color: #777;
+        font-family: 'Times New Roman';
+        margin-bottom: 15px;
+      }
+      .productcont{
+        padding: 40px;
+      }
+      .selectbtn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 7px 25px;
+        background-color: #d63384;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+  
+      .selectbtn:hover {
+        background-color: #c2185b;
+      }
+      .contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+        .contacts a {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border: 2px solid whitesmoke;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            font-size: 20px;
+            font-family:'Times New Roman';
+          }
+      
+          .contacts a i {
+            font-size: 20px;
+            margin-right: 10px;
+          }
+      
+          .contacts a:hover {
+            background: whitesmoke;
+            color: rgb(129, 0, 62);
+            box-shadow: 0 0 20px white;
+          }                    
+          .catercont {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding:20px;
+        gap: 40px;
+        }
+
+        .cater-card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 25px;
+        width: 300px;
+        margin: 10px;
+        box-shadow: 0 8px 20px rgba(74, 0, 48, 0.737);
+        transition: transform 0.3s;
+        }
+
+        .cater-card:hover {
+        transform: translateY(-5px);
+        }
+
+        .fade-in {
+        opacity: 0;
+        animation: fadeIn 3s forwards;
+        }
+
+        .delay {
+        animation-delay: 0.4s;
+        }
+        .delay-more {
+        animation-delay: 0.8s;
+        }
+
+        @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+        }
+
+        @media screen and (max-width: 768px) {
+            .contacts a {
+              width: 200px; 
+              height: 20px; 
+              font-size: 8px; 
+              padding: 15px 15px; 
+            }
+          }        
+        @media screen and (max-width: 768px) {
+          .reserveformcontainer {
+              width: 200px; 
+              height: 200px; 
+              font-size: 10px; 
+              padding-bottom: 40%;
+            }
+        }        
+  </style>
+</head>
+
+<body>
+  <div class="maincontainer">
+    <div class="navbar">
+      <img src="https://i.imgur.com/z2Ledv5.png"  class="logo" alt="Logo"/>
+      <ul id="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#products">Product List</a></li>
+        <li><a href="#cater">Catering</a></li>
+        <li><a href="#gall">Gallery</a></li>
+        <li><a href="#reserve">Reservations</a></li>
+        <li><a href="#cont">Contacts</a></li>
+        <li><a href="#loc">Location</a></li>
+      </ul>
+    </div>
+
+    <!--banner logo-->
+    <section id="home">
+    <div class="bannerdiv">
+      <section id="home">
+        <h1 class="logo-name">JJ SweetCravings</h1>
+        <p class="tagline">"You Crave it? We Bake it!"</p>
+        <p class="date">EST. 2017</p>
+    </div>
+
+    <!--homepage-->
+    <div class="homepagecontainer">
+
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" style="width: 500px;">
+        <div class="carousel-inner1" style=" width:200px; height: 300px;">
+          <div class="carousel-item active">
+            <img src="https://i.imgur.com/MEqLhwJ.jpeg" alt="featuredphoto1">
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.imgur.com/W6Row6i.jpeg"  alt="featuredphoto2">
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.imgur.com/di0Up3r.jpeg"  alt="featuredphoto3">
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.imgur.com/BFga5Am.jpeg"  alt="featuredphoto4">
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.imgur.com/Qp4UEPj.jpeg" alt="featuredphoto5">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    
+      <div class="homepagetexts">
+        <h3 class="homepagetitle">LOOKING FOR AFFORDABLE YET QUALITY PASTRIES AND DISHES?</h3>
+        <p class="homepagedescrip">JJ SweetCravings: Crafted for Every Craving.<br>
+          From oven-fresh pastries to hearty, handcrafted meals,<br>
+          we serve comfort and flavor in every bite!
+        </p>
+        <a href="#products" class="buynowbtn">BUY NOW</a>
+      </div>
+    
+    </div>
+    <!--second container-->
+    <div class="maincontainer2">
+          <!--about us container-->
+          <section id="about">
+          <h2 class="aboutusmaintitle">About Us</h2>
+          <div class="abtuscont">
+            <div class="abt-us-card">
+              <div class="abt-us-title">Mission</div>
+              <div class="abt-us-quest">WHAT DO WE DO?</div>
+              <div class="divider"></div>
+              <p class="abt-us-description">
+                Our mission is to share the richness of Filipino flavors through a variety of freshly baked pastries, traditional delicacies, 
+                and savory dishes—crafted with care, quality, and heart. We’re committed to providing excellent customer service and customized
+                catering experiences that turn every meal into a meaningful moment.</p>
+            </div>
+
+            <div class="abt-us-card">
+              <div class="abt-us-title">Offers</div>
+              <div class="abt-us-quest">WHAT DO WE OFFER?</div>
+              <div class="divider"></div>
+              <p class="abt-us-description">
+                JJ SweetCravings offers a delicious variety of pastries, traditional Filipino delicacies, and hearty savory dishes to satisfy every craving.
+                Whether you're planning a small gathering or a large celebration, our catering services come with customizable menus and reliable,
+                high-quality service. You can place your orders online or visit us in person.</p>
+            </div>
+
+            <div class="abt-us-card">
+              <div class="abt-us-title">Attributes</div>
+              <div class="abt-us-quest">WHY CHOOSE US?</div>
+              <div class="divider"></div>
+              <p class="abt-us-description">
+                <br>
+                ✔ From solo lunches to family treats, we serve comfort food that welcomes all ages. <br>
+                ✔ From comforting meals to satisfying snacks, every dish is crafted with care and heart.<br>
+                ✔ Indulge in gourmet flavors without the high price.<br></p>
+            </div>
+          </div>
+        </section>
+
+      <hr>
+
+        <!--products container-->
+        <section id="products">
+          <h2 class="aboutusmaintitle" style="padding-top: 30px;">Product Lists</h2>
+          <div class="productcont">
+          <div class="product-container">
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/eFnA8et.jpeg" alt="Custom Cake">
+              <div class="product-info">
+                <div class="product-name">Customized Cake</div>
+                <div class="product-descrip" style="font-size:12px;">5x4 cake size with 12pcs 1oz cucpcake</div>
+                <div class="product-price">Php 850</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/ou9aBwW.jpeg" alt="Number Cake">
+              <div class="product-info">
+                <div class="product-name">Number Cake</div>
+                <div class="product-descrip">price per number</div>
+                <div class="product-price">Php 650</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/8DghPyM.jpeg" alt="Brownie Cake">
+              <div class="product-info">
+                <div class="product-name">Brownie Slab Cake</div>
+                <div class="product-descrip">8x8 pan size</div>
+                <div class="product-price">Php 850</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/Pm5iOUL.jpeg" alt="Yema Cake">
+              <div class="product-info">
+                <div class="product-name">Yema Cake</div>
+                <div class="product-descrip">7x4 cake size</div>
+                <div class="product-price">Php 1100</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/qeKkCuQ.jpeg" alt="Ube-Leche Mango Cake">
+              <div class="product-info">
+                <div class="product-name" style="font-size: 16px;">Ube-Leche Mango Cake</div>
+                <div class="product-descrip">7x4 cake size</div>
+                <div class="product-price">Php 1400</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+      
+        <br>
+        <!--second-->
+        <div class="product-container">
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/fUY7mnR.jpeg" alt="Drip Cake">
+              <div class="product-info">
+                <div class="product-name">Money Drip Cake</div>
+                <div class="product-descrip">money pulling cake</div>
+                <div class="product-price">Php 1200</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/tgv53np.jpeg" alt="Pansit Bihon">
+              <div class="product-info">
+                <div class="product-name">Pansit Bihon</div>
+                <div class="product-descrip">Large Bilao</div>
+                <div class="product-price">Php 1100</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/Ph9Yqeb.jpeg" alt="palabok">
+              <div class="product-info">
+                <div class="product-name">Pansit Palabok</div>
+                <div class="product-descrip">Large Bilao</div>
+                <div class="product-price">Php 1200</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/O0xZ9Yk.jpeg" alt="carbonara">
+              <div class="product-info">
+                <div class="product-name">Carbonara</div>
+                <div class="product-descrip">Large Bilao</div>
+                <div class="product-price">Php 1500</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/VLpkF0W.jpeg" alt="spaghetti">
+              <div class="product-info">
+                <div class="product-name">Spaghetti</div>
+                <div class="product-descrip">Large Bilao</div>
+                <div class="product-price">Php 1400</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+          </div>
+      
+          <br>
+        <!--fourth-->
+      
+        <div class="product-container">
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/BvzG0M8.jpeg">
+              <div class="product-info">
+                <div class="product-name">Pork Shanghai</div>
+                <div class="product-descrip">100 pieces</div>
+                <div class="product-price">Php 900</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/6eK0DsX.jpeg">
+              <div class="product-info">
+                <div class="product-name">Sapin-sapin</div>
+                <div class="product-descrip">50 pieces</div>
+                <div class="product-price">Php 400</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/pb8kBKL.jpeg">
+              <div class="product-info">
+                <div class="product-name">Black Kutsinta</div>
+                <div class="product-descrip">100 pieces with dulce de leche</div>
+                <div class="product-price">Php 390</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/7Xyc5P8.jpeg" >
+              <div class="product-info">
+                <div class="product-name">Puto-Flan</div>
+                <div class="product-descrip">50 pieces</div>
+                <div class="product-price">Php 620</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/agty5GK.jpeg">
+              <div class="product-info">
+                <div class="product-name">Puto Cheese</div>
+                <div class="product-descrip">50 pieces</div>
+                <div class="product-price">Php 580</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+          </div>
+          <br>
+           <!--fourth-->
+      
+          <div class="product-container">
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/KR0li9u.jpeg">
+              <div class="product-info">
+                <div class="product-name">Suman Bulagta</div>
+                <div class="product-descrip">50 pieces with dulce de leche</div>
+                <div class="product-price">Php 600</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/YifRYlH.jpeg">
+              <div class="product-info">
+                <div class="product-name">Ube Cheese Butchi</div>
+                <div class="product-descrip">50 pieces</div>
+                <div class="product-price">Php 600</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/oGjq9uK.jpeg">
+              <div class="product-info">
+                <div class="product-name">Cordon Bleu</div>
+                <div class="product-descrip">family-sized meal</div>
+                <div class="product-price">Php 1500</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/aR6kLUB.jpeg" >
+              <div class="product-info">
+                <div class="product-name">Beef Brocolli</div>
+                <div class="product-descrip">family-sized meal</div>
+                <div class="product-price">Php 1300</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+      
+            <div class="productitems">
+              <img src="https://i.imgur.com/ySrGKca.jpeg">
+              <div class="product-info">
+                <div class="product-name">Pork Sisig</div>
+                <div class="product-descrip">family-sized meal</div>
+                <div class="product-price">Php 1600</div>
+                <a href="#products" class="selectbtn">SELECT</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+       
+      <hr>
+
+        <!--catering container-->
+        <section id="cater">
+      <p class="textnggallery"></p>
+    <div class="catercont">
+        <div class="cater-card fade-in">
+          <h3 class="abt-us-title">Catering Service</h3>
+          <p class="abt-us-quest">We offer exceptional catering services with a variety of food packages tailored for any 
+        occasion—plus mobile grazing and coffee bars that bring charm and sophistication to your event.</p>
+        </div>
+        <div class="cater-card fade-in delay">
+          <h3  class="abt-us-title">Meal Styles</h3>
+          <p class="abt-us-quest">From sweet treats to full-course meals, we offer a delicious variety to suit every occasion.
+             Choose from cakes, cupcakes, signature delicacies, and hearty meals. Whether you prefer elegant plated dinners, 
+             abundant buffets, or convenient boxed meals, our catering options are tailored to match your event style and guest needs.</p>
+        </div>
+        <div class="cater-card fade-in delay-more">
+          <h3  class="abt-us-title">Customization</h3>
+          <p class="abt-us-quest">We offer full customization, giving you the freedom to choose your preferred colors, 
+            themes, and details. Every setup is creatively designed to match your vision, making your celebration not just 
+            special, but truly unforgettable.</p>
+        </div>
+        </div>
+        <br>
+
+      <div class="okaynato">
+        <div class="gallery-container">
+    <div class="carousel-wrapper">
+      <div id="carouselFeedbacks" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div>
+              <img src="https://i.imgur.com/qfsN1RG.jpeg" alt="catering1">
+              <img src="https://i.imgur.com/SwGi5q0.jpeg" alt="catering2">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div>
+              <img src="https://i.imgur.com/HZUxiaG.jpeg" alt="catering3">
+              <img src="https://i.imgur.com/9VWF5Uw.jpeg" alt="catering4">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div>
+              <img src="https://i.imgur.com/Ou5eNMp.jpeg" alt="catering5">
+              <img src="https://i.imgur.com/GGjh2rq.jpeg" alt="catering6">
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev2" type="button" data-bs-target="#carouselFeedbacks" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next2" type="button" data-bs-target="#carouselFeedbacks" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="gallerytexts">
+      <h3 class="gallerytitle">Sample Catering Packages</h3>
+      <p class="gallerydescrip">We offer a variety of catering options to fit your event. Choose from mobile grazing tables, coffee bars, 
+        cakes, cupcakes, delicacies, and full meals. You can go with plated dinners, buffets, or easy boxed meals—whatever works best for 
+        your style and guests.</p>
+      <a href="#reserve" class="buynowbtn2">RESERVE NOW</a>
+    </div>
+  </div>
+</div>
+</div>
+         </section>
+         <br>
+         <br>
+      
+
+      <section id="gall">
+      <h2 class="aboutusmaintitle">Customers Gallery</h2>
+      <p class="textnggallery">We value transparency and trust, which is why we proudly share real customer 
+        testimonials, authentic feedback,<br> and verified proof of payment to assure you of the credibility and 
+        quality of our products and services.</p>
+  <!-- Feedbacks Carousel -->
+  <div class="gallery-container">
+    <div class="carousel-wrapper">
+      <div id="carouselFeedbacks" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div>
+              <img src="https://i.imgur.com/qLEmxnp.jpeg" alt="feedback 1">
+              <img src="https://i.imgur.com/EpkuVLM.jpeg" alt="feedback 2">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div>
+              <img src="https://i.imgur.com/xZXUb5W.jpeg" alt="feedback 3">
+              <img src="https://i.imgur.com/xQ3pFGe.jpeg" alt="feedback 4">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div>
+              <img src="https://i.imgur.com/76QpuML.jpeg" alt="feedback 5">
+              <img src="https://i.imgur.com/qvzbY4E.jpeg" alt="feedback 6">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div>
+              <img src="https://i.imgur.com/nD0bPiW.jpeg" alt="feedback 7">
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev2" type="button" data-bs-target="#carouselFeedbacks" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next2" type="button" data-bs-target="#carouselFeedbacks" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="gallerytexts">
+      <h3 class="gallerytitle">How well does our food meet your expectations?</h3>
+      <p class="gallerydescrip">Join thousands of happy customers who satisfy their cravings at JJ SweetCravings. We’re not just serving meals and pastries—we’re creating moments of warmth, one bite at a time.</p>
+      <a href="#products" class="buynowbtn2">BUY NOW</a>
+    </div>
+  </div>
+
+  <br><br><br>
+
+  <!-- Payment Carousel -->
+  <div class="gallery-container">
+    <div class="carousel-wrapper">
+      <div id="carouselPayments" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div>
+              <img src="https://i.imgur.com/jtDV4Hx.jpeg" alt="payment6">
+              <img src="https://i.imgur.com/EBnX9pn.jpeg" alt="payment7">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div>
+              <img src="https://i.imgur.com/ZcGp2NI.jpeg" alt="payment2">
+              <img src="https://i.imgur.com/8HzuXKe.jpeg" alt="payment3">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div>
+              <img src="https://i.imgur.com/um5lOnz.jpeg" alt="payment4">
+              <img src="https://i.imgur.com/CVDVObp.jpeg" alt="payment5">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div>
+              <img src="https://i.imgur.com/0yUeGYF.jpeg" alt="payment1">
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev2" type="button" data-bs-target="#carouselPayments" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next2" type="button" data-bs-target="#carouselPayments" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="gallerytexts">
+      <h3 class="gallerytitle">How easy is it to settle your bill?</h3>
+      <p class="gallerydescrip">With the trust of thousands, JJ SweetCravings is your reliable destination for fresh, flavorful meals and baked goods. We’ve built <br>
+         our reputation by consistently delivering quality you can count on.</p>
+      <a href="#products" class="buynowbtn2">BUY NOW</a>
+    </div>
+  </div>
+
+      <hr>
+        
+      <!--reservation container-->
+      <section id="reserve">
+        <div class="reservecont">
+                <div class="contngreservetext">
+                  <img class="smile" src="https://i.imgur.com/OB82kU4.png" alt="smileeee">
+                  <p class="textngreserve">
+                    We look forward to welcoming you! <br> <br>
+                    Please fill out the form below to reserve your spot. 
+                    Whether you're planning a special occasion or other event, we’ll do our best to accommodate your preferences.
+                    Once submitted, our team will confirm your reservation shortly.
+                  </p>
+                </div>
+
+                <div class="reserveformcontainer">
+                    <h2 class="titles">Reservation Form</h2>
+                    <form action="https://formsubmit.co/jjsweetcravings5800@gmail.com" method="POST">
+                      <input type="text" name="name" placeholder="Full Name" required />
+                      <input type="email" name="email" placeholder="Email Address" required />
+                      <input type="text" name="number" placeholder="Phone Number" required />
+                      <select name="occasion" required>
+                        <option value="" disabled selected>Select an Occasion</option>
+                        <option value="birthday">Birthday</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="baptism">Baptism</option>
+                        <option value="birthday">Anniversary</option>
+                        <option value="baptism">Graduation</option>
+                        <option value="other">Other</option>
+                      </select>
+                      <input type="datetime-local" name="datetime" placeholder="Date & Time" required />
+                      <textarea name="message" placeholder="Message" rows="5"></textarea>
+                      <button type="submit">SEND MESSAGE</button>
+                    </form>
+                  </div>
+            </div>
+          </section>
+
+        <hr>
+
+        <!--contacts container-->
+        <section id="cont">
+          <div class="contactscont">
+              <div class="containerngtext">
+                <h2 class="titles2">Get in Touch</h2>
+                <p class="contactstext">We’d be happy to hear from you! Feel free to reach out to us through any of our social media platforms listed. 
+                  Our team would be delighted to answer your questions and can gladly arrange a meeting at a time that works best for you. 
+                  Prefer to speak with us in person? You’re more than welcome to stop by during our regular hours.</p>
+              </div>
+              <div class="contacts">
+                  <a href="https://maps.app.goo.gl/YWvdTG8dyhqSdEd97"><i class='bx bx-home'></i>Purok Pag-Asa, Balbaloto, Victoria, Tarlac, North Luzon, 2313</a>
+                  <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CrpPbDzGbpGQgTFJSPdjHQrwWckDdRMNQdVstFFrScPxTkNWXjVzMsVnhNrHzwHZdzRLBhSxGkGZxwstdkWL"><i class='bx bxl-gmail'></i>  jjsweetcravings5800@gmail.com</a>
+                  <a href="tel:09397289674"><i class='bx bx-phone'></i>  09397289674</a>
+                  <a href="https://www.facebook.com/jj.sweetcravings/"><i class='bx bxl-facebook'></i>  JJ Sweetcravings</a>
+                  <a href="https://www.youtube.com/@jjsweetcravings5800"><i class='bx bxl-youtube'></i>  JJ Sweetcravings</a>
+              </div>
+          </div>
+        </section>
+
+         <!--location container-->
+         <div class="loccont">
+          <section id="loc">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3842.6454718814102!2d120.65861587490677!3d15.610579585004318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396cdaa66db90bf%3A0xb7163cc42a3f0dfd!2sJJ%20Sweet%20Cravings!5e0!3m2!1sen!2sph!4v1746117055813!5m2!1sen!2sph" 
+              style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </section>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</div>
+</body>
+</html>
+
+
+
